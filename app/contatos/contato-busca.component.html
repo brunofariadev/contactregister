@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="row">
+        <h3>Busca</h3>
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+            <label for="search"></label>
+            <input type="search" class="form-control" placeholder="Digite sua busca" 
+            [ngModel]="busca" (ngModelChange)="search($event)">
+
+            <ul class="list-group">
+                <li class="list-group-item cursor-pointer" *ngFor="let c of contatos | async" (click)="verDetalhe(c)">{{c.nome}}</li>
+            </ul>
+        </div>
+    </div>
+</div>
